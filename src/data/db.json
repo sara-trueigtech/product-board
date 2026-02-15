@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "sara@email.com",
+      "password": "123",
+      "name": "Sara"
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "title": "Laptop Pro",
+      "price": 1500,
+      "category": "Electronics"
+    },
+    {
+      "id": "p2",
+      "title": "Office Chair",
+      "price": 2000,
+      "category": "Furniture"
+    }
+  ]
+}
