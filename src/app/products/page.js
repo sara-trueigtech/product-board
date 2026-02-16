@@ -1,3 +1,6 @@
+import ProductList from "@/components/products/productList";
+import Link from "next/link";
+
 export const metadata = {
   title: "Products",
   description: "explore products",
@@ -16,13 +19,15 @@ export default async function ProductsPage() {
     <div>
       <h2 className="text-2xl font-bold">Products</h2>
 
-      <ul className="mt-4 space-y-2">
+      {/* <ul className="mt-4 space-y-2 cursor-pointer">
         {products.map((p) => {
-          return (<li key={p.id}>{p.title}</li>)
+          return (<li key={p.id}><Link href={`/products/${p.id}`}>{p.title}</Link></li>)
         }
           
         )}
-      </ul>
+      </ul> */}
+
+      <ProductList products={products}/>
     </div>
   );
 }
