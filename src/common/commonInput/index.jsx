@@ -1,0 +1,31 @@
+const Input = ({
+  field = {},
+  style = {},
+  inputType = "text",
+  placeholder="text",
+  disablePast = false,
+  disableTyping = false,
+  ...rest
+}) => {
+  const today = inputType === "date" ? new Date().toISOString().split("T")[0] : undefined;
+  return (
+    <input
+    className="inputStyle"
+      {...field}
+      value={field.value ?? ""}
+      style={style}
+      {...rest}
+      type={inputType}
+      placeholder={placeholder}
+      min={disablePast ? today : undefined}
+      disabled={inputType === "date" ? !disableTyping : disableTyping}
+      onKeyDown={
+        disableTyping && inputType === "date"
+          ? (e) => e.preventDefault()
+          : undefined
+      }
+    />
+  );
+};
+
+export default Input;
