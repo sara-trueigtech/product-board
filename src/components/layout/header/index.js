@@ -12,16 +12,15 @@ export default function Header() {
   useEffect(() => {
     const token = getToken();
     setIsLoggedIn(!!token);
-  }, [pathname]); 
+  }, [pathname]);
 
   function logout() {
     logoutToken();
-    window.location.href = "/login";
+    router.push("/login");
   }
 
   function handleLogin() {
-    loginToken();
-    window.location.href = "/dashboard";
+    router.push("/login");
   }
 
   return (
@@ -29,11 +28,11 @@ export default function Header() {
       <h1 className="font-semibold">Dashboard</h1>
 
       {isLoggedIn ? (
-        <button onClick={logout} className="bg-red-500 text-white px-3 py-1">
+        <button onClick={logout} className="bg-red-500 text-white px-3 py-1 cursor-pointer">
           Logout
         </button>
       ) : (
-        <button onClick={handleLogin} className="bg-black text-white px-3 py-1">
+        <button onClick={handleLogin} className="bg-black text-white px-3 py-1 cursor-pointer">
           Login
         </button>
       )}
