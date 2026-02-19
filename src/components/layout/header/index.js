@@ -19,9 +19,9 @@ export default function Header() {
     router.push("/login");
   }
 
-  function handleLogin() {
-    router.push("/login");
-  }
+  // function handleLogin() {
+  //   router.push("/login");
+  // }
 
   return (
     <header className="bg-white shadow p-4 flex justify-between items-center">
@@ -32,9 +32,21 @@ export default function Header() {
           Logout
         </button>
       ) : (
-        <button onClick={handleLogin} className="bg-black text-white px-3 py-1 cursor-pointer">
-          Login
-        </button>
+        <div className="flex gap-3">
+          <button
+            onClick={() => router.push("/login")}
+            className="bg-black text-white px-3 py-1 cursor-pointer"
+          >
+            Login
+          </button>
+
+          <button
+            onClick={() => router.push("/signup")}
+            className="bg-green-600 text-white px-3 py-1 cursor-pointer"
+          >
+            Signup
+          </button>
+        </div>
       )}
     </header>
   );
