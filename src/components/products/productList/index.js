@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import {useDebounce} from "./hooks/useDebounce";
 import Link from "next/link";
+import { useDebounce } from "@/common/hooks/useDebounce";
 
 export default function ProductList({ products }) {
   const [search, setSearch] = useState("");

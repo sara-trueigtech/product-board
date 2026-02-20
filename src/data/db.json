@@ -31,6 +31,54 @@
       "title": "Office Chair",
       "price": 2000,
       "category": "Furniture"
+    },
+    {
+      "id": "p3",
+      "title": "Wireless Mouse",
+      "price": 800,
+      "category": "Electronics"
+    },
+    {
+      "id": "p4",
+      "title": "Mechanical Keyboard",
+      "price": 2500,
+      "category": "Electronics"
+    },
+    {
+      "id": "p5",
+      "title": "Standing Desk",
+      "price": 7500,
+      "category": "Furniture"
+    },
+    {
+      "id": "p6",
+      "title": "LED Monitor 27 inch",
+      "price": 12000,
+      "category": "Electronics"
+    },
+    {
+      "id": "p7",
+      "title": "Bookshelf",
+      "price": 3500,
+      "category": "Furniture"
+    },
+    {
+      "id": "p8",
+      "title": "Gaming Headset",
+      "price": 3000,
+      "category": "Electronics"
+    },
+    {
+      "id": "p9",
+      "title": "Smartphone X",
+      "price": 45000,
+      "category": "Electronics"
+    },
+    {
+      "id": "p10",
+      "title": "Coffee Table",
+      "price": 5000,
+      "category": "Furniture"
     }
   ]
 }

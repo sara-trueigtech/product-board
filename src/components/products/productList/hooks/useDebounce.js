@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-export const useDebounce = (value = "", time = 0, minLength = 0) => {
-  const [debounced, setDebounced] = useState(value);
+// export const useDebounce = (value = "", time = 0, minLength = 0) => {
+//   const [debounced, setDebounced] = useState(value);
   
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (value?.length < minLength) {
-        setDebounced("");
-        return;
-      }
-      setDebounced(value);
-    }, time);
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       if (value?.length < minLength) {
+//         setDebounced("");
+//         return;
+//       }
+//       setDebounced(value);
+//     }, time);
 
-    return () => clearTimeout(timer);
-  }, [value]);
+//     return () => clearTimeout(timer);
+//   }, [value]);
 
-  return debounced;
-};
+//   return debounced;
+// };
