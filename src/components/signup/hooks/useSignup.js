@@ -1,5 +1,8 @@
-import { loginToken } from "@/utils";
 import { useRouter } from "next/navigation";
+import { loginToken } from "@/utils";
+
+import { getUserByEmail } from "@/services/get";
+import { createUser } from "@/services/post";
 
 export const useSignup = () => {
   const router = useRouter();
@@ -13,30 +16,20 @@ export const useSignup = () => {
     const password = formData.get("password");
 
     try {
-      const res = await fetch(`http://localhost:4000/users?email=${email}`);
-      const existingUser = await res.json();
+      const existingUser = await getUserByEmail(email);
 
       if (existingUser.length > 0) {
         alert("User already exists!");
         return;
       }
 
-      await fetch("http://localhost:4000/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        }),
-      });
+      await createUser({ name, email, password });
 
       loginToken();
       router.push("/dashboard");
     } catch (error) {
       console.error("Signup error:", error);
+      alert("Signup failed. Please try again.");
     }
   }
 

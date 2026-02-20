@@ -1,29 +1,10 @@
-import { notFound } from "next/navigation";
+'use client';
 
-export default async function ProductDetail({ params }) {
-  const { id } = await params;
+import ProductDetailPage from "@/components/products/productDetail";
+import React from "react";
 
-  const res = await fetch(`${process.env.BASE_URL}/products/${id}`, {
-    cache: "no-store",
-  });
+export default function ProductDetailWrapper({ params }) {
+  const { id } = React.use(params)
 
-  if (!res.ok) return notFound();
-
-  const product = await res.json();
-
-  if (!product || !product.id) return notFound();
-
-  return (
-    <div>
-      <h1 className="text-3xl font-bold">{product.title}</h1>
-
-      <p className="mt-2 text-gray-600">
-        Category: {product.category}
-      </p>
-
-      <p className="mt-2">
-        Price: <strong>${product.price}</strong>
-      </p>
-    </div>
-  );
+  return <ProductDetailPage params={{ id }} />;
 }
