@@ -3,10 +3,20 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useDebounce } from "@/common/hooks/useDebounce";
+import { useForm } from "react-hook-form";
+import { getProductFilterControls } from "./constants";
+import CommonFormController from "@/common/commonFormController";
 
 export default function ProductList({ products }) {
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("all");
+  const { control, watch } = useForm({
+    defaultValues: {
+      search: "",
+      category: "all",
+    },
+  });
+
+  const search = watch("search");
+  const category = watch("category");
 
   const debouncedSearch = useDebounce(search, 500, 3);
 
@@ -15,14 +25,17 @@ export default function ProductList({ products }) {
     return ["all", ...set];
   }, [products]);
 
+  const controls = useMemo(() => {
+    return getProductFilterControls(categories);
+  }, [categories]);
+
   const filteredProducts = useMemo(() => {
     return products?.filter((p) => {
       const matchesSearch = p.title
         .toLowerCase()
         .includes(debouncedSearch.toLowerCase());
 
-      const matchesCategory =
-        category === "all" || p.category === category;
+      const matchesCategory = category === "all" || p.category === category;
 
       return matchesSearch && matchesCategory;
     });
@@ -30,30 +43,12 @@ export default function ProductList({ products }) {
 
   return (
     <div className="space-y-4">
-
-      <input
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        placeholder="search"
-        className="border p-2 w-full"
-      />
-      <select
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        className="border p-2 w-full"
-      >
-        {categories.map((c) => (
-          <option key={c}>{c}</option>
-        ))}
-      </select>
+      <CommonFormController controls={controls} control={control} />
 
       <ul className="space-y-2">
         {filteredProducts?.map((p) => (
           <li key={p.id}>
-            <Link
-              href={`/products/${p.id}`}
-              className="hover:underline"
-            >
+            <Link href={`/products/${p.id}`} className="hover:underline">
               {p.title}
             </Link>
           </li>

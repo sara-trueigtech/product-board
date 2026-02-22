@@ -1,29 +1,30 @@
+"use client";
+
 const Input = ({
   field = {},
-  style = {},
   inputType = "text",
-  placeholder="text",
-  disablePast = false,
-  disableTyping = false,
-  ...rest
+  placeholder = "",
+  className = "",
 }) => {
-  const today = inputType === "date" ? new Date().toISOString().split("T")[0] : undefined;
   return (
     <input
-    className="inputStyle"
       {...field}
-      value={field.value ?? ""}
-      style={style}
-      {...rest}
       type={inputType}
       placeholder={placeholder}
-      min={disablePast ? today : undefined}
-      disabled={inputType === "date" ? !disableTyping : disableTyping}
-      onKeyDown={
-        disableTyping && inputType === "date"
-          ? (e) => e.preventDefault()
-          : undefined
-      }
+      value={field.value ?? ""}
+      className={`
+        w-full
+        px-4
+        py-2
+        border
+        border-gray-300
+        rounded-lg
+        text-sm
+        outline-none
+        focus:border-black
+        placeholder:text-gray-400
+        ${className}
+      `}
     />
   );
 };

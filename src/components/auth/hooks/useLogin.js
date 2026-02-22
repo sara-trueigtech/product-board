@@ -8,12 +8,8 @@ export const useLogin = () => {
   const router = useRouter();
   const { dispatch } = useAuth();
 
-  async function handleLogin(e) {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-    const email = formData.get("email")?.trim();
-    const password = formData.get("password")?.trim();
+  async function handleLogin(data) {
+    const { email, password } = data;
 
     try {
       const users = await getUserByEmail(email);
@@ -40,7 +36,7 @@ export const useLogin = () => {
       });
 
       setTimeout(() => {
-      router.push("/dashboard");
+        router.push("/dashboard");
       }, 100);
     } catch (error) {
       console.error("Login error:", error);

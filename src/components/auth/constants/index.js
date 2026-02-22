@@ -1,18 +1,18 @@
 export const LOGIN_FORM_CONTROLLER = [
   {
     name: "email",
-    label : "Email",
+    label: "Email",
     type: "input",
     inputType: "email",
-    isRequired: "email is required",
-    placeholder: "email",
+    placeholder: "Enter your email",
+    isRequired: "Email is required",
   },
   {
-     name: "password",
-     label : "Password",
+    name: "password",
+    label: "Password",
     type: "input",
     inputType: "password",
-    placeholder: "password",
-    isRequired: "password is required",
-  }
+    placeholder: "Enter your password",
+    isRequired: "Password is required",
+  },
 ];

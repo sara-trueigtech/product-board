@@ -8,13 +8,8 @@ export const useSignup = () => {
   const router = useRouter();
   const { dispatch } = useAuth();
 
-  async function handleSignup(e) {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const password = formData.get("password");
+  async function handleSignup(data) {
+    const { name, email, password } = data;
 
     try {
       const existingUser = await getUserByEmail(email);
