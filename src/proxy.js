@@ -7,7 +7,7 @@ export function proxy(request) {
     request.nextUrl.pathname.startsWith("/dashboard") ||
     request.nextUrl.pathname.startsWith("/products");
 
-  if (isProtected && token !== "logged-in") {
+  if (isProtected && !token) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
