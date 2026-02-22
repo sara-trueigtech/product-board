@@ -36,7 +36,7 @@ export const useLogin = () => {
       });
 
       setTimeout(() => {
-        router.push("/dashboard");
+        router.back();
       }, 100);
     } catch (error) {
       console.error("Login error:", error);

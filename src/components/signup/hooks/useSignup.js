@@ -27,7 +27,7 @@ export const useSignup = () => {
       });
 
       setTimeout(() => {
-        router.push("/dashboard");
+        router.back();
       }, 100);
     } catch (error) {
       console.error("Signup error:", error);

@@ -9,7 +9,7 @@ export default function Header() {
 
   function logout() {
     dispatch({type: "LOGOUT"});
-    router.push("/login");
+    router.push("/");
   }
 
   return (

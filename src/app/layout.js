@@ -8,7 +8,7 @@ export const metadata = {
   description: "Product dashboard",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, authModal }) {
   return (
     <html lang="en">
       <body className="bg-gray-100 min-h-screen">
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 
             <div className="flex-1">
               <Header />
-              <main className="p-6">{children}</main>
+              <main className="p-6">{children} {authModal}</main>
             </div>
           </div>
         </AuthProvider>
