@@ -1,33 +1,22 @@
 "use client";
 
-import { logoutToken, getToken, loginToken } from "@/utils";
-import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import {  useAuth } from "@/store";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const router = useRouter();
-  const pathname = usePathname();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const token = getToken();
-    setIsLoggedIn(!!token);
-  }, [pathname]);
+  const {state, dispatch} = useAuth();
 
   function logout() {
-    logoutToken();
+    dispatch({type: "LOGOUT"});
     router.push("/login");
   }
-
-  // function handleLogin() {
-  //   router.push("/login");
-  // }
 
   return (
     <header className="bg-white shadow p-4 flex justify-between items-center">
       <h1 className="font-semibold">Dashboard</h1>
 
-      {isLoggedIn ? (
+      {state.isAuth ? (
         <button onClick={logout} className="bg-red-500 text-white px-3 py-1 cursor-pointer">
           Logout
         </button>
