@@ -28,63 +28,143 @@
   "products": [
     {
       "id": "p1",
-      "title": "Laptop Pro",
-      "price": 1500,
-      "category": "Electronics"
+      "title": "MacBook Air M2",
+      "price": 95000,
+      "category": "Electronics",
+      "image": "https://picsum.photos/seed/p1/600/400"
     },
     {
       "id": "p2",
-      "title": "Office Chair",
-      "price": 2000,
-      "category": "Furniture"
+      "title": "Premium Leather Office Chair",
+      "price": 8500,
+      "category": "Furniture",
+      "image": "https://picsum.photos/seed/p2/600/400"
     },
     {
       "id": "p3",
-      "title": "Wireless Mouse",
-      "price": 800,
-      "category": "Electronics"
+      "title": "Men's Casual Sneakers",
+      "price": 2499,
+      "category": "Fashion",
+      "image": "https://picsum.photos/seed/p3/600/400"
     },
     {
       "id": "p4",
-      "title": "Mechanical Keyboard",
-      "price": 2500,
-      "category": "Electronics"
+      "title": "Non-Stick Cookware Set",
+      "price": 3999,
+      "category": "Home & Kitchen",
+      "image": "https://picsum.photos/seed/p4/600/400"
     },
     {
       "id": "p5",
-      "title": "Standing Desk",
-      "price": 7500,
-      "category": "Furniture"
+      "title": "Adjustable Dumbbell Set",
+      "price": 6999,
+      "category": "Sports & Fitness",
+      "image": "https://picsum.photos/seed/p5/600/400"
     },
     {
       "id": "p6",
-      "title": "LED Monitor 27 inch",
-      "price": 12000,
-      "category": "Electronics"
+      "title": "Samsung 27 inch Monitor",
+      "price": 14500,
+      "category": "Electronics",
+      "image": "https://picsum.photos/seed/p6/600/400"
     },
     {
       "id": "p7",
-      "title": "Bookshelf",
-      "price": 3500,
-      "category": "Furniture"
+      "title": "Modern Wooden Bookshelf",
+      "price": 5500,
+      "category": "Furniture",
+      "image": "https://picsum.photos/seed/p7/600/400"
     },
     {
       "id": "p8",
-      "title": "Gaming Headset",
-      "price": 3000,
-      "category": "Electronics"
+      "title": "Women's Summer Dress",
+      "price": 1799,
+      "category": "Fashion",
+      "image": "https://picsum.photos/seed/p8/600/400"
     },
     {
       "id": "p9",
-      "title": "Smartphone X",
-      "price": 45000,
-      "category": "Electronics"
+      "title": "Electric Kettle 1.5L",
+      "price": 1299,
+      "category": "Home & Kitchen",
+      "image": "https://picsum.photos/seed/p9/600/400"
     },
     {
       "id": "p10",
-      "title": "Coffee Table",
-      "price": 5000,
-      "category": "Furniture"
+      "title": "Yoga Mat Premium",
+      "price": 899,
+      "category": "Sports & Fitness",
+      "image": "https://picsum.photos/seed/p10/600/400"
+    },
+    {
+      "id": "p11",
+      "title": "Wireless Bluetooth Earbuds",
+      "price": 2999,
+      "category": "Electronics",
+      "image": "https://picsum.photos/seed/p11/600/400"
+    },
+    {
+      "id": "p12",
+      "title": "Queen Size Bed Frame",
+      "price": 18500,
+      "category": "Furniture",
+      "image": "https://picsum.photos/seed/p12/600/400"
+    },
+    {
+      "id": "p13",
+      "title": "Men's Formal Shirt",
+      "price": 1499,
+      "category": "Fashion",
+      "image": "https://picsum.photos/seed/p13/600/400"
+    },
+    {
+      "id": "p14",
+      "title": "Air Fryer 4L",
+      "price": 7499,
+      "category": "Home & Kitchen",
+      "image": "https://picsum.photos/seed/p14/600/400"
+    },
+    {
+      "id": "p15",
+      "title": "Treadmill for Home",
+      "price": 32000,
+      "category": "Sports & Fitness",
+      "image": "https://picsum.photos/seed/p15/600/400"
+    },
+    {
+      "id": "p16",
+      "title": "iPad 10th Generation",
+      "price": 42000,
+      "category": "Electronics",
+      "image": "https://picsum.photos/seed/p16/600/400"
+    },
+    {
+      "id": "p17",
+      "title": "Wooden Dining Table Set",
+      "price": 22500,
+      "category": "Furniture",
+      "image": "https://picsum.photos/seed/p17/600/400"
+    },
+    {
+      "id": "p18",
+      "title": "Women's Handbag",
+      "price": 2599,
+      "category": "Fashion",
+      "image": "https://picsum.photos/seed/p18/600/400"
+    },
+    {
+      "id": "p19",
+      "title": "Mixer Grinder 750W",
+      "price": 3499,
+      "category": "Home & Kitchen",
+      "image": "https://picsum.photos/seed/p19/600/400"
+    },
+    {
+      "id": "p20",
+      "title": "Cricket Bat English Willow",
+      "price": 7999,
+      "category": "Sports & Fitness",
+      "image": "https://picsum.photos/seed/p20/600/400"
     }
   ]
 }

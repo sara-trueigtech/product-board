@@ -6,6 +6,7 @@ import { useDebounce } from "@/common/hooks/useDebounce";
 import { useForm } from "react-hook-form";
 import { getProductFilterControls } from "./constants";
 import CommonFormController from "@/common/commonFormController";
+import ProductCard from "../productCard";
 
 export default function ProductList({ products }) {
   const { control, watch } = useForm({
@@ -45,11 +46,11 @@ export default function ProductList({ products }) {
     <div className="space-y-4">
       <CommonFormController controls={controls} control={control} />
 
-      <ul className="space-y-2">
+      <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {filteredProducts?.map((p) => (
           <li key={p.id}>
             <Link href={`/products/${p.id}`} className="hover:underline">
-              {p.title}
+              <ProductCard product={p} />
             </Link>
           </li>
         ))}
